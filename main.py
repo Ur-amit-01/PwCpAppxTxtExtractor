@@ -11,7 +11,6 @@ except RuntimeError:
 
 
 import requests
-import asyncio
 import aiohttp
 import json
 import zipfile
@@ -23,7 +22,6 @@ from Crypto.Util.Padding import pad, unpad
 import os
 import base64
 from pyrogram import Client, filters
-import sys
 import re
 import requests
 import uuid
