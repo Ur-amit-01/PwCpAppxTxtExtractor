@@ -1,3 +1,15 @@
+import asyncio
+import sys
+# FIX: Create event loop BEFORE ANY OTHER IMPORTS
+if sys.platform == "win32":
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+try:
+    loop = asyncio.get_event_loop()
+except RuntimeError:
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
+
 import requests
 import asyncio
 import aiohttp
